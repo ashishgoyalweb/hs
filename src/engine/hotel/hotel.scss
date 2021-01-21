@@ -1,0 +1,73 @@
+@import "./../../variable.scss";
+
+&.hotel {
+  .trip {
+    .tInfo {
+      justify-content: space-between;
+      .dFrom {
+        width: 35%;
+
+        input[type="text"] {
+          width: 94%;
+        }
+      }
+      .date {
+        &::after {
+          bottom: 28px;
+        }
+      }
+
+      .traveller {
+        .travellerInfo {
+          .roomCount {
+            display: flex;
+            color: $lBlack;
+            font-weight: 700;
+            justify-content: space-between;
+            margin-top: 12px;
+            .removeHotel {
+              color: $Aqua;
+              font-weight: normal;
+              cursor: pointer;
+            }
+            &:nth-child(1) {
+              margin-top: 0;
+              .removeHotel {
+                display: none;
+              }
+            }
+          }
+
+          .hotelBtn {
+            display: flex;
+            justify-content: space-between;
+            .hotelTravlerButton {
+              input[type="button"] {
+                @include inputButton(14px, 5px 10px);
+                text-transform: capitalize;
+                margin-top: 15px;
+              }
+            }
+            .done {
+              color: $Aqua;
+              padding: 20px 10px 0 0;
+              cursor: pointer;
+            }
+          }
+
+          ul {
+            li {
+              span {
+                color: $Admin;
+              }
+            }
+          }
+        }
+      }
+
+      .btn {
+        width: 17%;
+      }
+    }
+  }
+}

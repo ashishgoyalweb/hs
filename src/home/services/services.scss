@@ -1,0 +1,86 @@
+@import "../../variable.scss";
+.services {
+  background: $white url(../../assets/map.png) center no-repeat;
+  padding: 20px 0 30px 0;
+
+  .wrapper {
+    overflow: hidden;
+    .wrapper-container {
+      display: flex;
+      width: 100%;
+      margin-top: 90px;
+
+      .wrapperBox {
+        margin: 0 10px;
+        width: 24%;
+        transition: background 2s;
+        & > div {
+          position: relative;
+          border: 1px solid #cacaca;
+          padding: 15px 40px 25px 40px;
+          background: $white;
+          height: 100%;
+
+          .iconbox {
+            position: relative;
+            width: 125px;
+            height: 125px;
+            background: $aquaBlue;
+            border-radius: 50%;
+            border: 12px solid $white;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -50%);
+
+            &::after {
+              position: absolute;
+              content: "";
+              width: 125px;
+              height: 125px;
+              border: 1px solid #cacaca;
+              left: -12px;
+              top: -12px;
+              border-radius: 50%;
+            }
+
+            .fa {
+              color: $white;
+              font-size: 50px;
+              position: relative;
+              left: 25%;
+              top: 25%;
+
+              &.fa-plane {
+                transform: translate(-50%, -50%) rotate(-45deg);
+                left: 54%;
+                top: 54%;
+              }
+            }
+          }
+
+          .serviceHeading {
+            font-size: 20px;
+            color: $lBlack;
+            font-weight: bold;
+            text-align: center;
+            margin: -40px 0 20px 0;
+          }
+
+          p {
+            text-align: center;
+            font-size: 16px;
+            margin: 0;
+          }
+        }
+        &:hover {
+          & > div {
+            .iconbox {
+              background: $darkBlue;
+              border: 12px solid $aquaBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

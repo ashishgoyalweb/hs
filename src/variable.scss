@@ -1,0 +1,39 @@
+$gray: #e0e0e0;
+$gray-font: #777;
+$white: #fff;
+$blue: #012b72;
+$orange: #f79324;
+$lBlack: #3e3f40;
+$darkBlue: #1f2746;
+$aquaBlue: #25adc3;
+$danger: #ff0000;
+$Admin: #272c33;
+$Aqua: #1e88e5;
+$lightGray: #f8f8f8;
+$SEBlue: #02173b;
+$ZBlack: #000;
+$skyBlue: #cceaf7;
+
+@mixin iconSprite($wid, $heig, $position) {
+  background-image: url(./assets/icons.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  content: "";
+  left: 15px;
+  width: $wid;
+  height: $heig;
+  background-position: $position;
+}
+
+@mixin inputButton($fontSize, $Padding) {
+  text-transform: uppercase;
+  background-color: $orange;
+  background-image: linear-gradient(#f79324, #c86c06);
+  border: 0;
+  outline: none;
+  color: $white;
+  font-weight: 600;
+  font-size: $fontSize;
+  padding: $Padding;
+  border-radius: 5px;
+}

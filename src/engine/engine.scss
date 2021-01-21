@@ -1,0 +1,507 @@
+@import "../variable.scss";
+.engine {
+  position: absolute;
+  top: 50%;
+  width: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+
+  nav {
+    background: transparent;
+    padding: 0;
+  }
+
+  .nav-tabs {
+    border: none;
+
+    a {
+      border-radius: 5px;
+      background-color: #02173b;
+      color: $orange;
+      margin-right: 15px;
+      font-weight: 500;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: none;
+      padding: 15px 30px;
+      position: relative;
+      outline: none;
+
+      &.active {
+        background-color: $orange;
+        color: $white;
+        &:after {
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 20px solid $orange;
+          content: "";
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &.flight {
+        padding-left: 50px;
+        &:before {
+          @include iconSprite(27px, 27px, 0 0);
+        }
+
+        &.active {
+          &:before {
+            background-position: 0 -34px;
+          }
+        }
+      }
+
+      &.hotel {
+        padding-left: 50px;
+        &:before {
+          @include iconSprite(20px, 26px, -27px 0);
+        }
+
+        &.active {
+          &:before {
+            background-position: -27px -34px;
+          }
+        }
+      }
+
+      &.flightHotel {
+        padding-left: 90px;
+        &:before {
+          @include iconSprite(61px, 27px, -97px 0);
+        }
+
+        &.active {
+          &:before {
+            background-position: -97px -34px;
+          }
+        }
+      }
+
+      &.holiday {
+        padding-left: 80px;
+        &:before {
+          @include iconSprite(50px, 34px, -47px 0);
+        }
+
+        &.active {
+          &:before {
+            background-position: -47px -34px;
+          }
+        }
+      }
+    }
+  }
+
+  .sprite {
+    background-image: url(../assets/icons.png);
+    background-repeat: no-repeat;
+
+    &.flight {
+      width: 27px;
+      height: 27px;
+      background-position: 0 0;
+    }
+  }
+
+  .engine-wrapper {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: $white;
+    margin-top: 40px;
+
+    label {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding-top: 8px;
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+          background-color: transparent;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border: 1px solid $white;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 8px;
+          top: 2px;
+          width: 8px;
+          height: 14px;
+          border: solid $orange;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    select {
+      display: block;
+      width: 50px;
+      margin-top: 2px;
+      height: 25px;
+      border-radius: 0;
+    }
+
+    input[type="text"] {
+      outline: none;
+      background: transparent;
+      border: 0;
+      width: 90%;
+      font-size: 20px;
+      color: #fff;
+      border-bottom: 1px dotted #fff;
+      padding: 8px 2px 5px 2px;
+
+      &::-webkit-input-placeholder {
+        font-size: 14px;
+      }
+      &::-moz-placeholder {
+        font-size: 14px;
+      }
+      &:-ms-input-placeholder {
+        font-size: 14px;
+      }
+      &input:-moz-placeholder {
+        font-size: 14px;
+      }
+    }
+
+    .trip {
+      .tInfo {
+        display: flex;
+        span {
+          color: #bbb;
+          display: block;
+        }
+
+        .roundTrip {
+          width: 82%;
+          display: flex;
+        }
+
+        .flyingInfo {
+          width: 67%;
+          display: flex;
+
+          .dFrom {
+            width: 46%;
+          }
+
+          .circle {
+            width: 7%;
+          }
+        }
+        .flyingDates {
+          width: 32%;
+          display: flex;
+          .date {
+            width: 50%;
+          }
+        }
+        .dFrom {
+          width: 31%;
+          position: relative;
+          .srcRstLits {
+            position: absolute;
+            width: 94%;
+            height: auto;
+            max-height: 400px;
+            overflow: auto;
+            background-color: $white;
+            color: $gray-font;
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                list-style: none;
+                padding: 5px 15px 5px 15px;
+                margin: 0;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                  background-color: rgba(247, 147, 36, 0.5);
+                  border-top: 1px solid $orange;
+                  border-bottom: 1px solid $orange;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+        .circle {
+          width: 5%;
+          display: flex;
+          i {
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            align-self: flex-end;
+            &:before {
+              @include iconSprite(20px, 15px, 0 -68px);
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+        .date {
+          width: 16%;
+          position: relative;
+
+          &::after {
+            @include iconSprite(24px, 26px, -20px -68px);
+            right: 20px;
+            bottom: 8px;
+            left: inherit;
+          }
+        }
+        .traveller {
+          width: 18%;
+          position: relative;
+          .info {
+            border-bottom: 1px dotted #fff;
+            padding: 8px 2px 5px 2px;
+            font-size: 20px;
+            position: relative;
+
+            &.down {
+              &::after {
+                position: absolute;
+                content: "\f107";
+                font-family: "FontAwesome";
+                right: 5px;
+                top: 10px;
+                cursor: pointer;
+              }
+            }
+
+            &.up {
+              &::after {
+                position: absolute;
+                content: "\f106";
+                font-family: "FontAwesome";
+                right: 5px;
+                top: 10px;
+                cursor: pointer;
+              }
+            }
+
+            span {
+              display: inline-block;
+              color: $white;
+            }
+          }
+
+          .travellerInfo {
+            position: absolute;
+            width: 380px;
+            background-color: $white;
+            padding: 10px;
+            right: 0;
+            margin-top: 10px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+
+            ul {
+              padding: 0;
+              margin: 0;
+              display: flex;
+
+              li {
+                padding: 0px;
+                list-style: none;
+                width: 33%;
+                display: inline-block;
+
+                span {
+                  display: block;
+                  section {
+                    font-weight: 600;
+                    color: $lBlack;
+
+                    span {
+                      font-size: 10px;
+                      display: inline;
+                      font-weight: normal;
+                    }
+                  }
+                }
+              }
+            }
+
+            .child {
+              margin-top: 5px;
+              ul {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                  padding: 5px;
+                  list-style: none;
+                  width: 25%;
+                  display: inline-block;
+
+                  span {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+
+            .fClass {
+              margin-top: 5px;
+              color: $gray-font;
+
+              select {
+                width: 90px;
+              }
+            }
+          }
+        }
+
+        .multi {
+          width: 82%;
+          position: relative;
+          .repeat {
+            display: flex;
+            margin-bottom: 25px;
+
+            .dFrom {
+              width: 38%;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+              .remove {
+                display: none;
+              }
+            }
+          }
+
+          .remove {
+            position: absolute;
+            right: 15px;
+            color: #ff0000;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+
+        .addMultiFlight {
+          right: 5%;
+          position: absolute;
+          bottom: -30px;
+          color: $orange;
+          cursor: pointer;
+        }
+      }
+      .radio {
+        margin-bottom: 10px;
+        label {
+          display: inline-block;
+          padding-left: 25px;
+          padding-top: 0;
+          margin-right: 25px;
+
+          input[type="radio"] {
+            &:checked ~ .checkmark {
+              border: none;
+
+              &:before {
+                content: "";
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                background-color: $orange;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+
+          .checkmark {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+
+            &:after {
+              border: 3px solid $orange;
+              width: 18px;
+              height: 18px;
+              border-radius: 50%;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .btnInfo {
+      display: flex;
+      margin-top: 25px;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      input[type="button"] {
+        @include inputButton(18px, 10px 20px);
+      }
+    }
+    @import "./hotel/hotel.scss";
+    @import "./holiday/holiday.scss";
+  }
+}

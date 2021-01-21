@@ -1,0 +1,86 @@
+@import "../../variable.scss";
+
+.destiContainer {
+  width: 100%;
+  background-color: $white;
+  padding-top: 25px;
+
+  .heading {
+    margin-bottom: 40px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .destiList {
+      width: 25%;
+      position: relative;
+      padding-top: 18.75%;
+      cursor: pointer;
+
+      .destiBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        .destiInfo {
+          position: relative;
+          height: 100%;
+          padding: 40% 20px 0 20px;
+          .destiHead {
+            color: $darkBlue;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+          .destiSubhead {
+            text-transform: uppercase;
+            color: $gray-font;
+            margin-bottom: 10px;
+          }
+          .destiCost {
+            color: $orange;
+            font-size: 20px;
+            margin-bottom: 15px;
+          }
+        }
+        figure {
+          position: absolute;
+          z-index: 9;
+          top: 0;
+          transition: 0.8s;
+          height: 100%;
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+      &:hover {
+        .destiBox {
+          figure {
+            top: -55%;
+
+            &:after {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

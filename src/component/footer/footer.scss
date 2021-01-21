@@ -1,0 +1,59 @@
+@import "../../variable.scss";
+
+footer {
+  border-top: 5px solid $orange;
+  padding: 10px 0;
+  background: $blue url(../../assets/wonder.png) bottom repeat-x;
+
+  .wrapper {
+    color: $white;
+    padding: 0 10px;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      li {
+        margin: 0;
+        padding: 30px 0;
+        list-style: none;
+        width: 25%;
+
+        h4 {
+          font-size: 24px;
+        }
+
+        a {
+          display: block;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 10px 0;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .logo {
+          width: 248px;
+          height: 75px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .info {
+          margin-bottom: 15px;
+          &::nth-child(1) {
+            margin-top: 30px;
+          }
+
+          a {
+            display: inline-block;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

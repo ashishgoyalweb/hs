@@ -1,0 +1,1829 @@
+@import "../../variable.scss";
+
+.middle-container {
+  width: 100%;
+  display: block;
+  font-family: "Lato", sans-serif;
+
+  .loader {
+    background-color: $skyBlue;
+    width: 100%;
+    height: 600px;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.flight,
+  &.hotels,
+  &.specialOffers,
+  &.holidays,
+  &.car,
+  &.country {
+    .banner {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .search {
+        width: 80%;
+        position: absolute;
+        bottom: 270px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .engine {
+          position: inherit;
+          top: inherit;
+          width: 100%;
+          left: inherit;
+          transform: inherit;
+          z-index: inherit;
+          .nav-tabs {
+            a {
+              border-radius: 0;
+              font-size: 16px;
+              border-bottom: none;
+              color: $white;
+              margin-right: 0;
+              background: rgba(0, 0, 0, 0.5);
+              &.flight,
+              &.hotel,
+              &.flightHotel,
+              &.holiday {
+                padding: 10px 15px;
+                &::before,
+                &::after {
+                  display: none;
+                }
+
+                &.active::before {
+                  background-position: inherit;
+                }
+              }
+
+              &:nth-child(3),
+              &:nth-child(4) {
+                display: none;
+              }
+
+              &.active {
+                background: rgba(2, 23, 59, 0.8);
+              }
+            }
+          }
+
+          .tab-content {
+            background: rgba(2, 23, 59, 0.8);
+            margin-top: 1px;
+            .flightEngine,
+            .flightHotelEngine {
+              .engine-wrapper {
+                border: none;
+                background: none;
+                margin-top: 0;
+                .trip {
+                  .radio {
+                    margin-bottom: 0;
+                    label {
+                      padding-left: 20px;
+                      margin-right: 15px;
+                      .checkmark {
+                        width: 15px;
+                        height: 15px;
+                        top: 5px;
+                      }
+
+                      &:nth-child(3) {
+                        display: none;
+                      }
+                    }
+                  }
+                  .tInfo {
+                    display: block;
+                    .roundTrip {
+                      width: 100%;
+                    }
+                    .traveller {
+                      width: 25%;
+                      margin-top: 6px;
+                      .info {
+                        font-size: 18px;
+                      }
+                    }
+                  }
+                }
+                .btnInfo {
+                  position: absolute;
+                  bottom: 20px;
+                  left: 30%;
+                  width: 65%;
+                  div {
+                    &:nth-child(1) {
+                      label {
+                        padding-left: 30px;
+                        padding-top: 0;
+                        width: 160px;
+                        .checkmark {
+                          height: 20px;
+                          width: 20px;
+                        }
+                      }
+                    }
+                    &:nth-child(2) {
+                      margin-left: 50%;
+                    }
+                  }
+                }
+              }
+            }
+            .hotelEngine {
+              .engine-wrapper {
+                background: none;
+                margin-top: 0;
+              }
+            }
+            input[type="text"] {
+              width: 94%;
+              font-size: 18px;
+              color: #fff;
+              border-bottom: 1px dotted #fff;
+              padding: 5px 2px;
+
+              &::-webkit-input-placeholder {
+                font-size: 14px;
+                color: $white;
+              }
+              &::-moz-placeholder {
+                font-size: 14px;
+                color: $white;
+              }
+              &:-ms-input-placeholder {
+                font-size: 14px;
+                color: $white;
+              }
+              &input:-moz-placeholder {
+                font-size: 14px;
+                color: $white;
+              }
+            }
+            input[type="button"] {
+              background-image: none;
+              font-size: 16px;
+              font-weight: normal;
+              border-radius: 0 8px 0 8px;
+              border: 1px solid $white;
+              transition: all 0.5s;
+
+              &:hover {
+                background-color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+    .midContainer {
+      width: 100%;
+      display: block;
+      background: $lightGray;
+
+      .wrapper {
+        max-width: 1200px;
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: $white;
+
+        .flight_heading {
+          font-size: 28px;
+          margin: 10px 0;
+          color: $orange;
+        }
+
+        .flightDesc {
+          color: $gray-font;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  &.flight {
+    .midContainer {
+      width: 100%;
+      display: block;
+      background: $lightGray;
+
+      .wrapper {
+        max-width: 1200px;
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: $white;
+
+        h2 {
+          font-size: 24px;
+          color: $orange;
+        }
+
+        .flight_heading {
+          font-size: 28px;
+          margin: 10px 0;
+          color: $orange;
+        }
+
+        .flightDesc {
+          color: $gray-font;
+          margin-bottom: 15px;
+        }
+
+        .collage {
+          color: $orange;
+          font-size: 24px;
+          display: block;
+          .column {
+            display: flex;
+            .col34 {
+              width: 34%;
+            }
+
+            .col66 {
+              width: 66%;
+              position: relative;
+
+              .col50 {
+                width: 50%;
+                margin: 0 0 0 5px;
+              }
+            }
+
+            .firstContainer,
+            .twoImg,
+            .bigOne,
+            .lastOne,
+            .midOne,
+            .twoContainer {
+              position: relative;
+              width: 100%;
+
+              img {
+                height: 30vw;
+              }
+              &:hover {
+                .overlay {
+                  //display: block;
+                  width: 100%;
+                  height: 100%;
+                  opacity: 1;
+                }
+              }
+            }
+
+            .twoContainer {
+              margin-top: 5px;
+              img {
+                height: 33.3vw;
+              }
+            }
+
+            .bigOne {
+              margin: 0 0 5px 5px;
+              img {
+                height: 30vw;
+              }
+            }
+
+            .lastOne {
+              img {
+                height: 33.3vw;
+              }
+            }
+
+            .midOne {
+              &:nth-child(1) {
+                margin-bottom: 5px;
+              }
+              img {
+                height: 16.5vw;
+              }
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+
+            .overlay {
+              position: absolute;
+              width: 5%;
+              height: 5%;
+              background: rgba(0, 0, 0, 0.5);
+              box-shadow: 0 0 0 10px #000;
+              z-index: 99;
+              transition: all 0.5s;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 0;
+              color: $white;
+              font-size: 30px;
+              .fare {
+                position: absolute;
+                bottom: 0;
+                right: 20px;
+              }
+              .desti {
+                margin: 10px 0 0 10px;
+                font-style: italic;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+
+        .flightDesti {
+          background-color: #f1f2f8;
+          padding: 15px;
+          margin-top: 15px;
+
+          .flightWrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .boxes {
+              width: 24%;
+              background-color: $white;
+              display: flex;
+              margin-bottom: 15px;
+              height: 65px;
+              overflow: hidden;
+              transition: all 0.3s linear;
+              border: 1px solid transparent;
+              .img {
+                width: 25%;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .info {
+                width: 50%;
+                padding: 5px;
+                div {
+                  &:nth-child(1) {
+                    font-size: 20px;
+                    font-weight: 600;
+                  }
+                  &:nth-child(2) {
+                    margin-top: -8px;
+                    color: $gray-font;
+                  }
+                }
+              }
+              .costing {
+                width: 25%;
+                padding: 25px 10px 10px 10px;
+                background-color: $orange;
+                color: $white;
+                div {
+                  &:nth-child(1) {
+                    font-size: 12px;
+                  }
+                  &:nth-child(2) {
+                    font-size: 18px;
+                    margin-top: -5px;
+                    font-weight: 600;
+                  }
+                }
+              }
+              &:hover {
+                box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.4);
+                border: 1px solid $gray;
+                transform: scale(1.2);
+                z-index: 9;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.hotels {
+    .midContainer {
+      .wrapper {
+        .hotelDestiOffer {
+          margin-top: 15px;
+          //overflow: hidden;
+          .slick-slider {
+            .slick-arrow {
+              &.slick-prev {
+                left: inherit;
+                top: -15px;
+                right: 50px;
+              }
+              &.slick-next {
+                left: inherit;
+                top: -15px;
+                right: 10px;
+              }
+
+              &::before {
+                font-size: 25px;
+                color: $orange;
+              }
+            }
+          }
+          .hotelWrapper {
+            width: 100%;
+            height: 300px;
+            min-width: 100%;
+            position: relative;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            .hotelInfo {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              color: $white;
+              .destination {
+                font-size: 22px;
+                margin: 30px 20px 20px 20px;
+                position: relative;
+              }
+
+              &:before {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+                position: absolute;
+                content: "";
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -webkit-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+              }
+            }
+            &:hover {
+              .hotelInfo {
+                color: $lBlack;
+                &:before {
+                  visibility: visible;
+                  opacity: 0.8;
+                  height: 100%;
+                  background: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .hotelOffer {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../../assets/hotel-offers.jpg) 50% 80%;
+        background-size: cover;
+        padding: 124px 0;
+
+        .wrapper {
+          background-color: transparent;
+        }
+
+        h2 {
+          font-size: 36px;
+          margin-bottom: 15px;
+          color: $white;
+          font-weight: 400;
+          text-align: center;
+        }
+
+        .carousel-listing {
+          width: 100%;
+          overflow: hidden;
+
+          .slick-slider {
+            .slick-arrow {
+              &.slick-prev {
+                left: inherit;
+                top: -15px;
+                right: 50px;
+              }
+              &.slick-next {
+                left: inherit;
+                top: -15px;
+                right: 10px;
+              }
+
+              &::before {
+                font-size: 25px;
+                color: $orange;
+              }
+            }
+          }
+
+          .carousel-items {
+            width: 370px;
+            min-width: 370px;
+            padding: 10px 15px;
+            transition: 0.4s;
+            .main-img {
+              position: relative;
+              overflow: hidden;
+              height: 277px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+              .list-mask {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                display: flex;
+                background-color: $ZBlack;
+                justify-content: space-between;
+                padding: 10px 15px;
+                .fare {
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: $white;
+
+                  .divider {
+                    margin: 0px 8px;
+                    font-size: 14px;
+                    position: relative;
+                    top: -3px;
+                    color: #b6b6b6;
+                  }
+                  .pkg {
+                    font-size: 14px;
+                    position: relative;
+                    top: -3px;
+                    color: #b6b6b6;
+                  }
+                }
+                .rating {
+                  font-size: 16px;
+                  color: $orange;
+                }
+              }
+            }
+            .main-info {
+              padding: 10px;
+              position: relative;
+              background-color: $white;
+              .hotel-title {
+                .hName {
+                  line-height: 1.3em;
+                  font-size: 20px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+                .country {
+                  font-size: 18px;
+                  color: $gray-font;
+                }
+              }
+              .arrow {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background: $gray-font;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 50%;
+                font-size: 20px;
+                color: $white;
+                right: 10px;
+                top: 23px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.hotel {
+    //search
+    background-color: $lightGray;
+    .search {
+      background-color: $Admin;
+      width: 100%;
+      position: relative;
+      display: block;
+
+      .searchBox {
+        .engine {
+          position: relative;
+          width: 98%;
+          top: inherit;
+          left: inherit;
+          transform: inherit;
+          .nav-tabs {
+            display: none;
+          }
+
+          .tab-content {
+            .engine-wrapper {
+              border: none;
+              background-color: transparent;
+              margin-top: 0;
+              padding: 10px 15px;
+              .trip {
+                .tInfo {
+                  position: relative;
+                  height: 125px;
+                  .dFrom {
+                    width: 50%;
+                  }
+                  .date {
+                    width: 22%;
+                    height: 90px;
+                    &:after {
+                      bottom: 44px;
+                      right: 34px;
+                    }
+                  }
+                  .traveller {
+                    width: 50%;
+                    position: absolute;
+                    top: 65px;
+
+                    .info {
+                      padding: 1px 2px 1px 2px;
+                      font-size: 16px;
+
+                      &.up,
+                      &.down {
+                        &:after {
+                          top: 2px;
+                        }
+                      }
+                    }
+
+                    .travellerInfo {
+                      font-size: 14px;
+                    }
+                  }
+                  .btn {
+                    position: absolute;
+                    top: 42px;
+                    left: 440px;
+                    .btnInfo {
+                      input[type="button"] {
+                        background-image: none;
+                        font-size: 16px;
+                        padding: 8px 15px;
+                        border-radius: 0 8px;
+                        font-weight: normal;
+                      }
+                    }
+                  }
+                  input[type="text"] {
+                    font-size: 16px;
+                    padding: 1px 2px 1px 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .midContainer {
+      width: 100%;
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .filter {
+        width: 280px;
+        padding: 10px;
+
+        .filterOpt {
+          border-radius: 4px;
+          border: 1px solid $gray;
+          background-color: $white;
+
+          .headingFilter {
+            border-bottom: 1px solid $gray;
+            padding: 10px 8px;
+            text-align: left;
+            color: $darkBlue;
+            font-weight: 600;
+            font-size: 18px;
+          }
+
+          .hotelName {
+            padding: 20px 15px;
+            border-bottom: 1px solid $gray;
+            font-weight: 600;
+            & > div {
+              color: $lBlack;
+              font-size: 14px;
+            }
+            input[type="text"] {
+              color: $lBlack;
+              width: 100%;
+              margin: 7px 0;
+              outline: none;
+              border: 1px solid $gray;
+              line-height: 31px;
+              padding: 0 5px;
+            }
+          }
+          .budget {
+            position: relative;
+            padding: 20px 15px 55px 20px;
+            border-bottom: 1px solid $gray;
+            font-weight: 600;
+            color: $lBlack;
+            font-size: 14px;
+            @mixin range-slider(
+              $width,
+              $height,
+              $input-top,
+              $input-bg-color,
+              $input-thumb-color,
+              $float: none,
+              $input-height: 10px,
+              $input-border-radius: 0
+            ) {
+              position: relative;
+              width: $width;
+              height: $height;
+              float: $float;
+              text-align: center;
+
+              input[type="range"] {
+                pointer-events: none;
+                position: absolute;
+                -webkit-appearance: none;
+                -webkit-tap-highlight-color: $orange;
+                border: none;
+                border-radius: $input-border-radius;
+                background: $input-bg-color;
+
+                //overflow: hidden;
+                left: 0;
+                top: $input-top;
+                width: $width;
+                outline: none;
+                height: 10px;
+                margin: 0;
+                padding: 0;
+              }
+
+              input[type="range"]::-webkit-slider-thumb {
+                pointer-events: all;
+                position: relative;
+                z-index: 1;
+                outline: 0;
+                -webkit-appearance: none;
+                width: 15px;
+                height: 40px;
+                border: none;
+                background-color: $orange;
+              }
+
+              input[type="range"]::-moz-range-thumb {
+                pointer-events: all;
+                position: relative;
+                z-index: 10;
+                -moz-appearance: none;
+                width: 15px;
+                height: 40px;
+                border: none;
+                background-color: $orange;
+              }
+
+              input[type="range"]::-ms-thumb {
+                pointer-events: all;
+                position: relative;
+                z-index: 10;
+                -ms-appearance: none;
+                width: 15px;
+                height: 40px;
+                border: 0;
+                background-color: $orange;
+              }
+
+              input[type="range"]::-moz-range-track {
+                position: relative;
+                z-index: -1;
+                background-color: $orange;
+                border: 0;
+              }
+
+              input[type="range"]:last-of-type::-moz-range-track {
+                -moz-appearance: none;
+                background: none transparent;
+                border: 0;
+              }
+
+              input[type="range"]::-moz-focus-outer {
+                border: 0;
+              }
+            }
+
+            .range-slider {
+              @include range-slider(100%, 50px, 55px, $orange, #413f41, none);
+              .rangeValues {
+                font-weight: normal;
+                font-size: 24px;
+              }
+            }
+          }
+          .starRating {
+            font-weight: 600;
+            color: $lBlack;
+            font-size: 14px;
+            padding: 20px 15px;
+            border-bottom: 1px solid $gray;
+
+            & > div {
+              margin-bottom: 8px;
+            }
+
+            .rating {
+              div {
+                width: 100%;
+                border: 1px solid $gray;
+                border-bottom: none;
+                padding: 6px 10px 6px 20px;
+                &:last-child {
+                  border-bottom: 1px solid $gray;
+                }
+                .fa {
+                  font-size: 18px;
+                  color: $orange;
+                  margin-right: 5px;
+                }
+
+                &.active {
+                  border-left-width: 8px;
+                  border-left-color: $darkBlue;
+                  padding-left: 12px;
+                }
+              }
+            }
+          }
+
+          .boardType {
+            padding: 20px 15px;
+            & > div {
+              font-weight: 600;
+              color: $lBlack;
+              font-size: 14px;
+              margin-bottom: 8px;
+            }
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                list-style: none;
+                input[type="checkbox"] {
+                  -webkit-appearance: none;
+                  background-color: $lightGray;
+                  border: 1px solid $gray;
+                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+                    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                  padding: 7px;
+                  display: inline-block;
+                  position: relative;
+                  margin-right: 10px;
+
+                  &:checked {
+                    &:after {
+                      content: "\2714";
+                      font-size: 14px;
+                      position: absolute;
+                      top: 0px;
+                      left: 3px;
+                      color: $orange;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .result {
+        padding: 10px;
+        width: calc(100% - 280px);
+
+        .hotelSrchInfo {
+          padding: 5px 10px;
+          border: 1px solid $gray;
+          background-color: $white;
+          color: $gray-font;
+          position: relative;
+          margin-bottom: 15px;
+          overflow: hidden;
+          font-size: 14px;
+          span {
+            color: $orange;
+            font-weight: 600;
+          }
+
+          .modify {
+            background-color: $orange;
+            color: $white;
+            padding: 6px 15px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+          }
+        }
+
+        .hotelsrcCard {
+          border: 1px solid $gray;
+          display: flex;
+          border-radius: 4px;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          transition: all 0.3s linear;
+          background-color: $white;
+
+          &:hover {
+            box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
+          }
+
+          .imgContainer {
+            border-radius: 4px 4px 0 0;
+            width: 243px;
+            height: 160px;
+            position: relative;
+            margin: 15px;
+            overflow: hidden;
+
+            img {
+              border-radius: 4px 4px 0 0;
+              width: 243px;
+              height: 160px;
+              margin-bottom: 5px;
+              transition: all 0.3s linear;
+
+              &:hover {
+                -ms-transform: scale(1.5); /* IE 9 */
+                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                transform: scale(1.5);
+              }
+            }
+            .thumList {
+              display: flex;
+              img {
+                margin-right: 5px;
+                width: 57px;
+                height: 57px;
+                overflow: hidden;
+                opacity: 0.8;
+
+                border-radius: 0;
+
+                &:hover {
+                  opacity: 1;
+                }
+
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+          .hotelInfo {
+            width: 412px;
+            margin: 15px 15px 15px 0;
+
+            .hotelName {
+              font-size: 20px;
+              font-weight: bold;
+              color: $darkBlue;
+            }
+            .fa-star {
+              margin-right: 3px;
+              color: $gray;
+              &.orange {
+                color: $orange;
+              }
+            }
+
+            .address,
+            .desc {
+              color: $gray-font;
+            }
+            .desc {
+              margin-top: 15px;
+            }
+          }
+          .priceInfo {
+            font-family: "Lato", sans-serif;
+            width: 200px;
+            background-color: $gray;
+            text-align: right;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            .from {
+              font-size: 14px;
+              font-style: italic;
+              color: $gray;
+              font-weight: normal;
+            }
+            .fare {
+              font-size: 30px;
+              font-weight: 800;
+              color: $orange;
+              span {
+                font-style: italic;
+              }
+            }
+            .pax {
+              color: $gray-font;
+              margin-bottom: 10px;
+              margin-top: -10px;
+            }
+
+            input[type="button"] {
+              background: $orange;
+              color: #fff;
+              outline: none;
+              border: 1px solid #fff;
+              padding: 8px 20px;
+              cursor: pointer;
+              border-radius: 10px 0;
+              transition: all 0.3s linear;
+
+              &:hover {
+                background-color: #02173b;
+                color: #f79324;
+              }
+            }
+          }
+        }
+        .sorting {
+          display: flex;
+          border: 1px solid $gray;
+          border-top-width: 5px;
+          border-radius: 5px 5px 0 0;
+          background-color: $white;
+          margin-bottom: 15px;
+          font-weight: 500;
+
+          div {
+            color: $darkBlue;
+            padding: 7px 0 7px 15px;
+            width: 24%;
+            border-right: 1px dotted $gray;
+            cursor: pointer;
+
+            &.active {
+              background-color: $orange;
+              color: $white;
+            }
+
+            &:first-child {
+              cursor: auto;
+            }
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.specialOffers {
+    .spHoliday {
+      margin: 15px 0;
+      width: 100%;
+
+      .heading {
+        margin-bottom: 45px;
+      }
+
+      .spContainer {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .spHolidayContainer {
+          width: 33.33%;
+          padding: 0 15px;
+          margin-bottom: 20px;
+          cursor: pointer;
+
+          &:nth-child(1),
+          &:nth-child(4) {
+            padding-left: 0;
+          }
+
+          &:nth-child(3),
+          &:nth-child(6) {
+            padding-right: 0;
+          }
+
+          figure {
+            width: 100%;
+            height: 260px;
+            margin-bottom: 0;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              transition: 2s;
+            }
+          }
+
+          .spInfo {
+            padding: 20px;
+            box-shadow: 0px 0px 18px -15px #000;
+            width: 100%;
+
+            .spCountry {
+              margin-bottom: 10px;
+              display: flex;
+              justify-content: space-between;
+              .count {
+                font-size: 20px;
+                color: $SEBlue;
+                font-weight: 600;
+              }
+              .spFare {
+                font-size: 18px;
+                color: $orange;
+              }
+            }
+            .spDesc {
+              margin-bottom: 10px;
+              color: $gray-font;
+            }
+          }
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    .spFlight {
+      margin: 15px 0;
+      width: 100%;
+
+      .heading {
+        margin-bottom: 45px;
+      }
+
+      .spFlightContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow: hidden;
+
+        .spFlightBox {
+          min-width: 298px;
+          padding: 0 15px;
+          width: 298px;
+          background-color: $white;
+
+          margin-bottom: 20px;
+          figure {
+            margin-bottom: 0;
+            img {
+              width: 100%;
+              height: 200px;
+            }
+          }
+          .spFlightInfo {
+            box-shadow: rgba(0, 0, 0, 0.32) 0px 2px 5px -1px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+            display: flex;
+            background-color: $darkBlue;
+            .spFlightDesti {
+              font-size: 20px;
+              flex: 75%;
+              color: $white;
+              .spFlightFrom {
+                font-size: 14px;
+                color: $gray-font;
+                margin-top: -5px;
+              }
+            }
+            .spFlightFare {
+              flex: 25%;
+              font-size: 18px;
+              color: $orange;
+            }
+          }
+          &:nth-child(1) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .spPackage {
+      margin: 15px 0;
+
+      .spPackageContainer {
+        display: flex;
+        .spPackOne {
+          width: 50%;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          figure {
+            width: 100%;
+            margin-bottom: 0;
+            height: 600px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .spPackOneInfo {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            padding: 50px 20px 20px 20px;
+            .spPackOneDuration {
+              font-size: 16px;
+              color: $orange;
+            }
+            .spPackOneHead {
+              font-size: 22px;
+              color: $white;
+              margin: 0px 0 15px 0;
+            }
+            .spPackOneDesc {
+              color: $lightGray;
+            }
+          }
+        }
+        .spPackTwo {
+          width: 50%;
+          display: flex;
+          overflow: hidden;
+
+          .spPackSection {
+            width: calc(48% - 10px);
+            margin-left: 10px;
+            background-color: $lightGray;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            figure {
+              margin-bottom: 0;
+              img {
+                width: 100%;
+                height: 245px;
+              }
+            }
+
+            .spPackInfo {
+              padding: 20px;
+
+              .spPackDuration {
+                font-size: 16px;
+                color: $orange;
+              }
+              .spPackHead {
+                font-size: 22px;
+                color: $SEBlue;
+                margin-bottom: 15px;
+              }
+              .spPackDesc {
+                color: $lBlack;
+              }
+            }
+          }
+        }
+        .spPackButton {
+          background-color: $blue;
+          color: $white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 15px 20px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &.holidays {
+    .holidayType {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .hTypeBox {
+        width: 280px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        transition: all 1s;
+
+        figure {
+          width: 100%;
+          height: 210px;
+          margin: 0;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .hType {
+          position: absolute;
+          color: $white;
+          bottom: 15px;
+          left: 15px;
+          text-shadow: 2px 2px 9px black;
+          font-size: 18px;
+        }
+        .layer {
+          position: absolute;
+          width: 0;
+          height: 0;
+          z-index: 9;
+          top: 100%;
+        }
+        &:hover {
+          .layer {
+            background-color: rgba(37, 173, 195, 0.5);
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              background-color: $Admin;
+              color: $white;
+              padding: 10px 20px;
+              border-radius: 0 10px;
+              cursor: pointer;
+
+              &:hover {
+                color: $aquaBlue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bannerBig {
+      width: 100%;
+      max-width: 1900px;
+      background-image: url(../../assets/holidays-bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      background-position: 50% 50%;
+      height: 573px;
+      margin: 0 auto;
+
+      .overlay {
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-left: 50%;
+        padding: 100px 50px;
+        color: $white;
+
+        .off {
+          font-size: 90px;
+          color: $white;
+          font-weight: 800;
+        }
+
+        .head {
+          color: $aquaBlue;
+          font-weight: 600;
+          font-size: 50px;
+          margin-bottom: 20px;
+        }
+        .desc {
+          font-size: 18px;
+        }
+        .cost {
+          color: $aquaBlue;
+          font-size: 28px;
+          font-weight: 600;
+          margin: 10px 0;
+        }
+
+        .call {
+          font-size: 18px;
+          font-style: italic;
+          color: $gray;
+          span {
+            font-size: 36px;
+            color: $white;
+            font-style: normal;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    .countries {
+      margin: 30px 0 10px 0;
+      width: 100%;
+
+      .country {
+        display: flex;
+        margin: 30px 0 0 0;
+        flex-wrap: wrap;
+        .cList {
+          width: 20%;
+          flex: 20%;
+          overflow: hidden;
+          background-color: $white;
+          height: 350px;
+          position: relative;
+          padding: 5px 5px 1px 5px;
+          cursor: pointer;
+
+          img {
+            vertical-align: middle;
+            width: auto;
+            height: 100%;
+          }
+          .layer {
+            color: $white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 5px 5px 1px 5px;
+            width: 100%;
+            height: 100%;
+            .cName {
+              font-size: 20px;
+              position: relative;
+              transform: translate(-50%, -50%);
+              left: 50%;
+              top: 50%;
+              text-align: center;
+              transition: all 0.5s linear;
+            }
+
+            .cDesc {
+              font-size: 16px;
+              width: 90%;
+              height: 150px;
+              overflow: hidden;
+              text-align: justify;
+              margin: 5%;
+              position: relative;
+              top: 50%;
+              opacity: 0;
+              transition: all 0.5s linear;
+            }
+
+            .arrow {
+              position: relative;
+              top: 45%;
+              left: 50%;
+              opacity: 0;
+              transform: translateY(-50%);
+              transition: all 0.6s linear;
+              .fa-arrow-right {
+                font-size: 25px;
+                transition: all 0.6s linear;
+              }
+            }
+          }
+          &:hover {
+            .layer {
+              background-color: rgba(1, 64, 115, 0.7);
+              .cDesc {
+                top: 20%;
+                opacity: 1;
+              }
+              .cName {
+                top: 25%;
+              }
+              .arrow {
+                top: 20%;
+                opacity: 1;
+                .fa-arrow-right {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .moreOne {
+      text-align: center;
+      color: $white;
+      font-size: 18px;
+      margin: 0 5px;
+      width: 100%;
+      background-color: rgb(2, 57, 102);
+      a {
+        color: $white;
+        text-decoration: none;
+        width: 100%;
+        padding: 8px 0;
+        display: block;
+      }
+      &:hover {
+        background-color: $orange;
+      }
+    }
+    .moreTwo {
+      text-align: center;
+      color: $white;
+      font-size: 18px;
+      margin: 0 5px;
+      width: 100%;
+      background-color: $blue;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        width: 100%;
+        padding: 8px 0;
+        display: block;
+      }
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
+
+  &.car {
+    .carSection {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .section {
+        width: 49%;
+        display: flex;
+        border: 1px solid $gray;
+        margin-bottom: 15px;
+
+        .carImg {
+          width: 25%;
+          padding: 5px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .carInfo {
+          width: 55%;
+          margin-left: 2%;
+          padding: 5px;
+          .carName {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            display: block;
+            li {
+              list-style: none;
+              margin: 0 22px 5px 0;
+              padding: 0 5px 0 0;
+              display: inline-block;
+              font-size: 14px;
+
+              i {
+                position: relative;
+                margin-right: 30px;
+                &.seat {
+                  &::before {
+                    @include iconSprite(20px, 20px, -111px -88px);
+                    left: 0;
+                  }
+                }
+                &.gear {
+                  &::before {
+                    @include iconSprite(20px, 20px, -91px -68px);
+                    left: 0;
+                  }
+                }
+                &.bag {
+                  &::before {
+                    @include iconSprite(20px, 20px, -131px -68px);
+                    left: 0;
+                  }
+                }
+                &.ac {
+                  &::before {
+                    @include iconSprite(20px, 20px, -111px -68px);
+                    left: 0;
+                  }
+                }
+                &.door {
+                  &::before {
+                    @include iconSprite(20px, 20px, -91px -88px);
+                    left: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .carPrice {
+          width: 20%;
+          background-color: $lightGray;
+          color: $orange;
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+          padding-top: 25px;
+          position: relative;
+          span {
+            color: $gray-font;
+            font-style: italic;
+            font-size: 14px;
+            font-weight: normal;
+          }
+
+          input[type="button"] {
+            border: 0;
+            outline: none;
+            background-color: $blue;
+            color: $white;
+            width: 100%;
+            padding: 5px 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &.country {
+    .countryWrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      flex-wrap: wrap;
+
+      .countryList {
+        width: 24%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        cursor: pointer;
+
+        figure {
+          margin-bottom: 0;
+          width: 100%;
+          height: 190px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            transition: all 1s;
+          }
+        }
+        .tour-detail {
+          width: 100%;
+          border: 1px solid $gray;
+          padding: 20px;
+          h3 {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0 0 15px 0;
+          }
+          .info {
+            text-align: justify;
+            font-size: 14px;
+            max-height: 80px;
+          }
+        }
+        .tour-cost {
+          width: 100%;
+          padding: 10px 20px;
+          color: $blue;
+          background-color: $gray;
+          font-size: 20px;
+          text-align: right;
+          font-weight: 600;
+          span {
+            color: $darkBlue;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: normal;
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+          figure {
+            img {
+              transform: scale(1.5);
+            }
+          }
+          .tour-cost {
+            background-color: $blue;
+            color: $white;
+            span {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.hotelSrcInfo {
+    background-color: #eee;
+    .midContainer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+
+      .hotelSection {
+        display: flex;
+        width: 100%;
+        .hName {
+          width: 65%;
+          .name {
+            font-size: 20px;
+            .fa-star {
+              font-size: 16px;
+              color: $gray-font;
+              &.orange {
+                color: $orange;
+              }
+            }
+          }
+          .add {
+            font-size: 18px;
+          }
+        }
+        .hPrice {
+          width: 35%;
+          .fare {
+            font-size: 28px;
+            color: $orange;
+          }
+          .pp {
+            color: $gray-font;
+          }
+        }
+      }
+      .hotelContainer {
+        background-color: $white;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        width: 100%;
+
+        .imageSection {
+          width: 80%;
+        }
+        .infoSection {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
